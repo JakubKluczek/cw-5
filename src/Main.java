@@ -6,17 +6,18 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Employee> employees = new ArrayList<>();
 
-        Developer dev = new Developer("John", "Doe", "123456789", "john@doe.com", "New York", 2020);
-        Technology te = new Technology("Java", 800);
-        dev.addTechnology(te);
+        Programista dev = new Programista("John", "Doe", "123456789", "john@doe.com", "New York", 2020);
+        Technology t=new Technology("Java", 800);
+        dev.addTechnology(t);
         employees.add(dev);
 
         Tester tester = new Tester("Jane", "Smith", "987654321", "jena@smith.com", "Los Amgeles", 2021);
-        tester.addTestType("UX/UX");
+        tester.addTaskType("UX/UX");
         employees.add(tester);
 
-        Manager manager = new Manager("Bob", "Johnson", "Chicago", "bob@johnson.com", "1122334455", 2019);
-
+        Manager manager= new Manager("Bob", "Johnson", "Chicago", "bob@johnson.com", "1122334455", 2019);
+        Goal g=new Goal(2010, 10, 15, "Implementing FB login", 1000);
+        manager.addGoals(g);
         employees.add(manager);
 
         int totalAmount = 0;
@@ -24,7 +25,7 @@ public class Main {
             totalAmount += employee.calculateMonthlyCost();
 
         }
-        System.out.println("Total amount to be paid this month:" + totalAmount + " USD");
+        System.out.println("Total amount to be paid this month:" + totalAmount + " zł");
 
     }
 }

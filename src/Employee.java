@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Employee {
 
@@ -9,30 +10,24 @@ public class Employee {
     protected String pesel;
     protected int rokZatrudnienia;
 
+    private double baseSalary= 3000;
+
 
     public Employee(String name, String lastName, String adres, String email, String pesel, int rokZatrudnienia) {
         this.name = name;
         this.lastName = lastName;
-        this.pesel = adres;
+        this.adres = adres;
         this.email = email;
         this.pesel = pesel;
         this.rokZatrudnienia = rokZatrudnienia;
-
     }
-    public ArrayList<Employee> employees;
-    public ArrayList<Employee> czasPracy;
+
     public double calculateMonthlyCost(){
-        int baseSalary= 3000;
-        int annualIncrease= 1000;
-        int totalSalary= baseSalary + yearsOfWork * annualIncrease;
-        return totalSalary;
+        int obecnyRok = LocalDate.now().getYear();
+        int lataPracy = obecnyRok - rokZatrudnienia;
 
-
-
+        return baseSalary + (1000 * lataPracy);
     }
-
-
-
 }
 
 
