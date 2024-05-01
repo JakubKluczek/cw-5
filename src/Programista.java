@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 
 public class Programista extends Employee{
-    public ArrayList<Technology> technologie;
+    private ArrayList<Technology> technologie;
 
     public Programista(String name, String lastName, String adres, String email, String pesel, int rokZatrudnienia) {
         super(name, lastName, adres, email, pesel, rokZatrudnienia);

@@ -10,7 +10,7 @@ public class Employee {
     protected String pesel;
     protected int rokZatrudnienia;
 
-    private double baseSalary= 3000;
+    protected double baseSalary= 3000;
 
 
     public Employee(String name, String lastName, String adres, String email, String pesel, int rokZatrudnienia) {
